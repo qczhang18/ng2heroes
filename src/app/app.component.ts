@@ -25,8 +25,7 @@ const HEROES: Hero[] = [
 
     <h2>My Heroes</h2>
       <ul class="heroes">
-        <li *ngFor="let hero of heroes">
-          <!-- each hero goes here -->
+        <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
           <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
       </ul>
@@ -36,9 +35,9 @@ const HEROES: Hero[] = [
     <div>
       <label>name: </label>
       <input [(ngModel)]="hero.name" placeholder="name">
-    </div>
-    `,
-    styles: [`
+    </div>`,
+
+  styles: [`
   .selected {
     background-color: #CFD8DC !important;
     color: white;
@@ -88,6 +87,7 @@ const HEROES: Hero[] = [
   }
 `]
 })
+
 export class AppComponent {
   title = 'Tour of Heroes';
   hero: Hero = {
