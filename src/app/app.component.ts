@@ -22,11 +22,12 @@ const HEROES: Hero[] = [
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    
+
     <h2>My Heroes</h2>
       <ul class="heroes">
-        <li>
+        <li *ngFor="let hero of heroes">
           <!-- each hero goes here -->
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
       </ul>
 
